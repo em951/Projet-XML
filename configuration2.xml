@@ -8,6 +8,21 @@
         <row player="red" move="1" rowNumber="4"/>
         <row player="yellow" move="2" rowNumber="5"/>
     </column>
-    
+    <column>
+        <row player="yellow" move="1" rowNumber="0"/>
+        <row player="red" move="2" rowNumber="1"/>
+        <row player="yellow" move="1" rowNumber="2"/>
+        <row player="red" move="2" rowNumber="3"/>
+        <row player="yellow" move="1" rowNumber="4"/>
+        <row player="red" move="2" rowNumber="5"/>
+    </column>
+    <column>
+        <row player="red" move="1" rowNumber="0"/>
+        <row player="yellow" move="2" rowNumber="1"/>
+        <row player="red" move="1" rowNumber="2"/>
+        <row player="yellow" move="2" rowNumber="3"/>
+        <row player="red" move="1" rowNumber="4"/>
+        <row player="yellow" move="2" rowNumber="5"/>
+    </column>
     <!-- Les autres colonnes sont vides -->
 </configuration>
