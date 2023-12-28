@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration title="Début de la partie">
+<configuration title="Début de la partie" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="schema.xsd">
     <column>
         <row player="red" move="1" rowNumber="0"/>
         <row player="yellow" move="2" rowNumber="1"/>
