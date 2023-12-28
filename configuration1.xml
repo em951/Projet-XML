@@ -8,7 +8,8 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
         <!-- Les autres lignes de cette colonne sont vides -->
     </column>
     <column>
-        <!-- Cette colonne est entièrement vide -->
+    <row player="yellow" move="1" rowNumber="0"/>
+
     </column>
     <column>
         <row player="yellow" move="1" rowNumber="0"/>

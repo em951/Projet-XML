@@ -10,7 +10,7 @@
                         <xsd:sequence>
                             <xsd:element name="row" maxOccurs="6"> 
                                 <xsd:complexType>
-                                    <xsd:attribute name="player" use="required"> <!-- Utilisation de "use" pour indiquer que l'attribut est requis -->
+                                    <xsd:attribute name="player" use="required"> 
                                         <xsd:simpleType>
                                             <xsd:restriction base="xsd:string">
                                                 <xsd:enumeration value="yellow" />
@@ -26,6 +26,8 @@
                     </xsd:complexType>
                 </xsd:element>
             </xsd:sequence>
+            <!-- Ajout de l'attribut 'title' à l'élément 'configuration' -->
+            <xsd:attribute name="title" type="xsd:string"/>
         </xsd:complexType>
     </xsd:element>
 
