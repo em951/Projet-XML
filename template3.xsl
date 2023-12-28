@@ -22,17 +22,35 @@
 
     <!-- Modèle pour l'élément 'column' -->
     <xsl:template match="column">
-    <!-- Calcul de la position horizontale de la colonne -->
+        <!-- Calcul de la position horizontale de la colonne -->
+        <xsl:variable name="xPos" select="(position() - 1) * 100"/>
+        <!-- Appel du modèle pour chaque jeton dans la colonne -->
+        <xsl:apply-templates select="row">
+            <xsl:with-param name="xPos" select="$xPos"/>
+        </xsl:apply-templates>
     </xsl:template>
 
     <!-- Modèle pour l'élément 'row' -->
     <xsl:template match="row">
-    <!-- Calcul de la position verticale du jeton -->
-      <!-- Dessin du cercle représentant le jeton avec la grille -->
+        <xsl:param name="xPos"/>
+        <!-- Calcul de la position verticale du jeton -->
+        <xsl:variable name="yPos" select="(5 - @rowNumber) * 100"/>
+        <!-- Dessin du cercle représentant le jeton avec la grille -->
         <g>
             <!-- Grille -->
-            <rect x="{$xPos - 45}" y="{$yPos - 45}" width="90" height="90" fill="blue"/>
-        </g>    
+            <rect x="{$xPos}" y="{$yPos}" width="100" height="100" fill="white" stroke="black"/>
+            <!-- Jeton -->
+            <circle cx="{$xPos + 50}" cy="{$yPos + 50}" r="40">
+                <!-- Couleur en fonction du joueur -->
+                <xsl:attribute name="fill">
+                    <xsl:choose>
+                        <xsl:when test="@player='red'">red</xsl:when>
+                        <xsl:when test="@player='yellow'">yellow</xsl:when>
+                        <xsl:otherwise>white</xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+            </circle>
+        </g>
     </xsl:template>
 
 
