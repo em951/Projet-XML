@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--template pour faire la conversion de la configuration2-->
+
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -23,7 +25,7 @@
     <!-- Modèle pour l'élément 'column' -->
     <xsl:template match="column">
         <!-- Calcul de la position horizontale de la colonne -->
-        <xsl:variable name="xPos" select="(position() - 1) * 100"/>
+        <xsl:variable name="xPos" select="50+ (position() - 1) * 100"/>
         <!-- Appel du modèle pour chaque jeton dans la colonne -->
         <xsl:apply-templates select="row">
             <xsl:with-param name="xPos" select="$xPos"/>
@@ -32,15 +34,15 @@
 
     <!-- Modèle pour l'élément 'row' -->
     <xsl:template match="row">
-        <xsl:param name="xPos"/>
         <!-- Calcul de la position verticale du jeton -->
-        <xsl:variable name="yPos" select="(5 - @rowNumber) * 100"/>
+        <xsl:param name="xPos"/>
+        <xsl:variable name="yPos" select="50 + (@rowNumber) * 100"/>
         <!-- Dessin du cercle représentant le jeton avec la grille -->
         <g>
             <!-- Grille -->
-            <rect x="{$xPos}" y="{$yPos}" width="100" height="100" fill="white" stroke="black"/>
+            <rect x="{$xPos - 50}" y="{$yPos - 50}" width="100" height="100" fill="white" stroke="black"/>
             <!-- Jeton -->
-            <circle cx="{$xPos + 50}" cy="{$yPos + 50}" r="40">
+            <circle cx="{$xPos}" cy="{$yPos}" r="40">
                 <!-- Couleur en fonction du joueur -->
                 <xsl:attribute name="fill">
                     <xsl:choose>
