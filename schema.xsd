@@ -5,10 +5,16 @@
     <xsd:element name="puissance4Config">
         <xsd:complexType>
             <xsd:sequence>
-                <!-- Définition de l'élément "column" -->
                 <xsd:element name="column">
-                    <!-- ComplexType spécifiant la structure de l'élément "column" -->
                     <xsd:complexType>
+                        <xsd:sequence>
+                            <!-- Définition de l'élément "row" -->
+                            <xsd:element name="row">
+                                <!-- ComplexType spécifiant la structure de l'élément "row" -->
+                                <xsd:complexType>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>
             </xsd:sequence>
