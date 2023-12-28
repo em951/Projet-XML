@@ -2,16 +2,15 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     elementFormDefault="qualified">
 
-    <xsd:element name="puissance4Config">
+    <xsd:element name="configuration">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="column">
+                <xsd:element name="column" maxOccurs="7"> 
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="row">
+                            <xsd:element name="row" maxOccurs="6"> 
                                 <xsd:complexType>
-                                    <!-- Attribut "player" avec restriction sur les valeurs possibles -->
-                                    <xsd:attribute name="player">
+                                    <xsd:attribute name="player" use="required"> <!-- Utilisation de "use" pour indiquer que l'attribut est requis -->
                                         <xsd:simpleType>
                                             <xsd:restriction base="xsd:string">
                                                 <xsd:enumeration value="yellow" />
@@ -19,10 +18,8 @@
                                             </xsd:restriction>
                                         </xsd:simpleType>
                                     </xsd:attribute>
-                                    <!-- Attribut "move" de type entier -->
-                                    <xsd:attribute name="move" type="xsd:integer"/>
-                                    <!-- Attribut "rowNumber" de type entier non négatif -->
-                                    <xsd:attribute name="rowNumber" type="xsd:nonNegativeInteger"/>
+                                    <xsd:attribute name="move" type="xsd:integer" use="required"/>
+                                    <xsd:attribute name="rowNumber" type="xsd:nonNegativeInteger" use="required"/>
                                 </xsd:complexType>
                             </xsd:element>
                         </xsd:sequence>
