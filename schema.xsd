@@ -2,8 +2,17 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     elementFormDefault="qualified">
 
-    <!-- Définition de l'élément racine du document XML -->
-    <xsd:element name="puissance4">
+    <xsd:element name="puissance4Config">
+        <xsd:complexType>
+            <xsd:sequence>
+                <!-- Définition de l'élément "column" -->
+                <xsd:element name="column">
+                    <!-- ComplexType spécifiant la structure de l'élément "column" -->
+                    <xsd:complexType>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
     </xsd:element>
 
 </xsd:schema>
