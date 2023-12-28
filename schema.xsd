@@ -8,10 +8,21 @@
                 <xsd:element name="column">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <!-- Définition de l'élément "row" -->
                             <xsd:element name="row">
-                                <!-- ComplexType spécifiant la structure de l'élément "row" -->
                                 <xsd:complexType>
+                                    <!-- Attribut "player" avec restriction sur les valeurs possibles -->
+                                    <xsd:attribute name="player">
+                                        <xsd:simpleType>
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:enumeration value="yellow" />
+                                                <xsd:enumeration value="red" />
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:attribute>
+                                    <!-- Attribut "move" de type entier -->
+                                    <xsd:attribute name="move" type="xsd:integer"/>
+                                    <!-- Attribut "rowNumber" de type entier non négatif -->
+                                    <xsd:attribute name="rowNumber" type="xsd:nonNegativeInteger"/>
                                 </xsd:complexType>
                             </xsd:element>
                         </xsd:sequence>
