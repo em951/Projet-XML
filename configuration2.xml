@@ -1,61 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration title="Partie nulle"
+<configuration title="Partie en cours"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="schema.xsd">
     <column>
-        <row player="red" move="1" rowNumber="0"/>
-        <row player="yellow" move="2" rowNumber="1"/>
-        <row player="red" move="1" rowNumber="2"/>
-        <row player="yellow" move="2" rowNumber="3"/>
-        <row player="red" move="1" rowNumber="4"/>
-        <row player="yellow" move="2" rowNumber="5"/>
-    </column>
-    <column>
-        <row player="yellow" move="3" rowNumber="0"/>
-        <row player="red" move="4" rowNumber="1"/>
-        <row player="yellow" move="3" rowNumber="2"/>
-        <row player="red" move="4" rowNumber="3"/>
-        <row player="yellow" move="3" rowNumber="4"/>
-        <row player="red" move="4" rowNumber="5"/>
-    </column>
-    <column>
-        <row player="red" move="5" rowNumber="0"/>
-        <row player="yellow" move="6" rowNumber="1"/>
-        <row player="red" move="5" rowNumber="2"/>
-        <row player="yellow" move="6" rowNumber="3"/>
-        <row player="red" move="5" rowNumber="4"/>
-        <row player="yellow" move="6" rowNumber="5"/>
-    </column>
-    <column>
-        <row player="yellow" move="7" rowNumber="0"/>
-        <row player="red" move="1" rowNumber="1"/>
-        <row player="yellow" move="7" rowNumber="2"/>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Coup du joueur rouge -->
         <row player="red" move="1" rowNumber="3"/>
-        <row player="yellow" move="7" rowNumber="4"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="2" rowNumber="4"/>
+        <!-- Coup du joueur rouge -->
         <row player="red" move="1" rowNumber="5"/>
     </column>
     <column>
-        <row player="red" move="2" rowNumber="0"/>
-        <row player="yellow" move="3" rowNumber="1"/>
-        <row player="red" move="2" rowNumber="2"/>
-        <row player="yellow" move="3" rowNumber="3"/>
-        <row player="red" move="2" rowNumber="4"/>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="1" rowNumber="3"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="4" rowNumber="4"/>
+        <!-- Coup du joueur jaune -->
         <row player="yellow" move="3" rowNumber="5"/>
     </column>
     <column>
-        <row player="yellow" move="4" rowNumber="0"/>
-        <row player="red" move="5" rowNumber="1"/>
-        <row player="yellow" move="4" rowNumber="2"/>
-        <row player="red" move="5" rowNumber="3"/>
-        <row player="yellow" move="4" rowNumber="4"/>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="4" rowNumber="3"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="3" rowNumber="4"/>
+        <!-- Coup du joueur rouge -->
         <row player="red" move="5" rowNumber="5"/>
     </column>
     <column>
-        <row player="red" move="6" rowNumber="0"/>
-        <row player="yellow" move="7" rowNumber="1"/>
-        <row player="red" move="6" rowNumber="2"/>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Coup du joueur jaune -->
         <row player="yellow" move="7" rowNumber="3"/>
-        <row player="red" move="6" rowNumber="4"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="1" rowNumber="4"/>
+        <!-- Coup du joueur jaune -->
         <row player="yellow" move="7" rowNumber="5"/>
+    </column>
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="2" rowNumber="3"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="3" rowNumber="4"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="2" rowNumber="5"/>
+    </column>
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Coup du joueur jaune -->
+        <row rowNumber="3"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="5" rowNumber="4"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="4" rowNumber="5"/>
+    </column>
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Coup du joueur rouge -->
+        <row rowNumber="3"/>
+        <!-- Coup du joueur jaune -->
+        <row rowNumber="4"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="6" rowNumber="5"/>
     </column>
 </configuration>
