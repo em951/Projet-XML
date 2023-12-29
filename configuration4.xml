@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration title="Fin de partie - Yelloww Wins"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="schema.xsd">
+
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Ligne vide -->
+        <row rowNumber="3"/>
+        <!-- Ligne vide -->
+        <row rowNumber="4"/>
+        <!-- Ligne vide -->
+        <row rowNumber="5"/>
+    </column>
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Ligne vide -->
+        <row rowNumber="3"/>
+        <!-- Ligne vide -->
+        <row rowNumber="4"/>
+        <!-- Ligne vide -->
+        <row rowNumber="5"/>
+    </column>
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Ligne vide -->
+        <row rowNumber="3"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="2" rowNumber="4"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="1" rowNumber="5"/>
+    </column>
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Ligne vide -->
+        <row rowNumber="3"/>
+        <!-- Coup du joueur rouge -->
+        <row player="yellow" move="3" rowNumber="4"/>
+        <!-- Coup du joueur jaune -->
+        <row player="red" move="1" rowNumber="5"/>
+    </column>
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="5" rowNumber="3"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="4" rowNumber="4"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="2" rowNumber="5"/>
+    </column>
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Coup du joueur jaune -->
+        <row player="yellow" move="6" rowNumber="2"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="5" rowNumber="3"/>
+        <!-- Coup du joueur rouge -->
+        <row player="red" move="4" rowNumber="4"/>
+        <!-- Coup du joueur rouge-->
+        <row player="red" move="3" rowNumber="5"/>
+    </column>
+    <column>
+        <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Ligne vide -->
+        <row rowNumber="3"/>
+        <!-- Ligne vide -->
+        <row rowNumber="4"/>
+        <!-- Ligne vide -->
+        <row rowNumber="5"/>
+    </column>
+    
+   
+</configuration>

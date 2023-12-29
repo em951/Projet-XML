@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--template pour faire la vérification de la configuration2-->
+<!--template pour faire la vérification de la configuration-->
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="schema.xsd">
 
-    <!-- Paramètre pour le titre de la partie -->
-    <xsl:param name="title"/>
+    <xsl:template match="/">
+        <!-- Valeur de l'attribut 'title' -->
+        <xsl:variable name="title" select="/configuration/@title" />
 
-    <!-- Vérifier le vainqueur -->
+        <!-- Document de sortie -->
+        <title>
+            <!-- Titre de la configuration -->
+                            <xsl:value-of select="$title" />
+        </title>
 
-    <xsl:template match="configuration">
-        <!--Afficher le status-->
-        <!--1 = vrai, 0 = faux-->
+        <!-- Vérification de la configuration, Grille 6 X 7-->
         <xsl:choose>
-            <xsl:when test="$horizontalWinRed = 1 or $verticalWinRed = 1 or $diagonalWinRed = 1 or $diagonalReverseWinRed = 1">
-                <text>Victoire du joueur rouge!</text>
-            </xsl:when>
-            <xsl:when test="$horizontalWinYellow = 1 or $verticalWinYellow = 1 or $diagonalWinYellow = 1 or $diagonalReverseWinYellow = 1">
-                <text>Victoire du joueur jaune!</text>
-            </xsl:when>
-            <xsl:when test="$tie=1">
-                <text>Égalité!</text>
-            </xsl:when>
+        <!-- Vérifier s'il y a sept colonnes -->
+        <xsl:when test="count(configuration/column) = 7">
+            <!-- Vérifier si chaque colonne a six lignes -->
+            <xsl:choose>
+                <xsl:when test="count(configuration/column[row[position() &lt;= 6]]) = 42">
+                            <!-- Configuration a 7 colonnes * 6 lignes = 42 'row' -->
+                    <text>La configuration a le bon nombre de 'row' et de 'column'.</text>
+                </xsl:when>
+                    <xsl:otherwise>
+                        <text>La configuration est incorrecte : chaque colonne ne contient pas 6 'row'.</text>
+                    </xsl:otherwise>
+            </xsl:choose>
+        </xsl:when>
             <xsl:otherwise>
-                <text>Partie en cours</text>
+                <text>La configuration est incorrecte : elle ne contient pas 7 'column'.</text>
             </xsl:otherwise>
         </xsl:choose>
+
+
+    <!-- Vérifier l'status du jeu -->
 
         <!-- Vérification Horizontale -->
         <!-- Vérification de la victoire horizontale pour le joueur Rouge -->
@@ -160,12 +170,12 @@
             </xsl:for-each>
         </xsl:variable>
 
-        <xsl:variable name="tie">
-            <!-- Vérifier si la grille est complètement remplie et si personne n'a gagné -->
-            <xsl:variable name="filledCountRed" select="count(column/row[@player = 'red'])"/>
-            <xsl:variable name="filledCountYellow" select="count(column/row[@player = 'yellow'])"/>
+
+        <!-- Vérifier si la grille est complètement remplie -->
+        <xsl:variable name="allCellsFilled">
             <xsl:choose>
-                <xsl:when test="$filledCountRed + $filledCountYellow = count(column/row)">
+                <!-- 42 jettons dans la grille -->
+                <xsl:when test="count(configuration/column/row[@player]) = 42">
                     <xsl:text>1</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
@@ -173,6 +183,23 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+
+         <!--Afficher le status-->
+        <!--1 = vrai, 0 = faux-->
+        <xsl:choose>
+            <xsl:when test="$horizontalWinRed = '1' or $verticalWinRed = '1' or $diagonalWinRed = '1' or $diagonalReverseWinRed = '1'">
+                <text>Victoire du joueur rouge!</text>
+            </xsl:when>
+            <xsl:when test="$horizontalWinYellow = '1' or $verticalWinYellow = '1' or $diagonalWinYellow = '1' or $diagonalReverseWinYellow = '1'">
+                <text>Victoire du joueur jaune!</text>
+            </xsl:when>
+            <xsl:when test="$allCellsFilled='1' and not($horizontalWinRed = '1' or $verticalWinRed = '1' or $diagonalWinRed = '1' or $diagonalReverseWinRed = '1') and not($horizontalWinYellow = '1' or $verticalWinYellow = '1' or $diagonalWinYellow = '1' or $diagonalReverseWinYellow = '1')">
+                <text>Égalité!</text>
+            </xsl:when>
+            <xsl:otherwise>
+                <text>Partie en cours</text>
+            </xsl:otherwise>
+        </xsl:choose>
 
     </xsl:template>
 
