@@ -12,29 +12,19 @@
         <!-- Document de sortie -->
         <title>
             <!-- Titre de la configuration -->
-                            <xsl:value-of select="$title" />
+            <xsl:value-of select="$title" />
         </title>
 
         <!-- Vérification de la configuration, Grille 6 X 7-->
-        <xsl:choose>
-        <!-- Vérifier s'il y a sept colonnes -->
-        <xsl:when test="count(configuration/column) = 7">
-            <!-- Vérifier si chaque colonne a six lignes -->
-            <xsl:choose>
-                <xsl:when test="count(configuration/column[row[position() &lt;= 6]]) = 42">
-                            <!-- Configuration a 7 colonnes * 6 lignes = 42 'row' -->
-                    <text>La configuration a le bon nombre de 'row' et de 'column'.</text>
-                </xsl:when>
-                    <xsl:otherwise>
-                        <text>La configuration est incorrecte : chaque colonne ne contient pas 6 'row'.</text>
-                    </xsl:otherwise>
-            </xsl:choose>
-        </xsl:when>
-            <xsl:otherwise>
-                <text>La configuration est incorrecte : elle ne contient pas 7 'column'.</text>
-            </xsl:otherwise>
-        </xsl:choose>
-
+            <xsl:if test="count(//column) = 7 and not(//column[count(row) &gt; 6])">
+                <xsl:text>La configuration est valide : 7 colonnes et jusqu'à 6 lignes par colonne.</xsl:text>
+            </xsl:if>
+            <xsl:if test="count(//column) != 7">
+                <xsl:text>La configuration n'a pas 7 colonnes.</xsl:text>
+            </xsl:if>
+            <xsl:if test="//column[count(row) &gt; 6]">
+                <xsl:text>Il y a plus de 6 lignes dans au moins une colonne.</xsl:text>
+            </xsl:if>
 
     <!-- Vérifier l'status du jeu -->
 
