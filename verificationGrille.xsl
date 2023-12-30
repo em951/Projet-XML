@@ -113,7 +113,20 @@
 
 
         <!-- Vérifier si la grille est complètement remplie -->
+        <!-- Compter le nombre total de cases -->
+        <xsl:variable name="totalSlots" select="count(configuration/column/row)"/>
 
+        <!-- Compter le nombre de cases occupées -->
+        <xsl:variable name="occupiedSlots" select="count(configuration/column/row[@player])"/>
+
+        <xsl:choose>
+            <xsl:when test="$occupiedSlots = $totalSlots">
+                <text>Le tableau est complètement rempli !</text>
+            </xsl:when>
+            <xsl:otherwise>
+                <text>Le tableau n'est pas complètement rempli.</text>
+            </xsl:otherwise>
+        </xsl:choose>
 
         
         
