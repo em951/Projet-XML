@@ -64,22 +64,26 @@
 
         <!-- Vérification Horizontale -->
         <!-- Vérification de la victoire horizontale pour le joueur Rouge -->
-
         <xsl:variable name="horizontalRed">
-            <xsl:for-each select="configuration/column[1]/row">
-                <xsl:if test="count(../following-sibling::column/row[@rowNumber = current()/@rowNumber][@player='red']) >= 3">
-                    <xsl:text>red</xsl:text>
-                </xsl:if>
+            <xsl:for-each select="configuration/column">
+                <xsl:for-each select="row[@player='red']">
+                    <xsl:variable name="rowNumber" select="@rowNumber"/>
+                    <xsl:if test="count(../following-sibling::column/row[@rowNumber = $rowNumber][@player='red']) >= 3">
+                        <xsl:text>red</xsl:text>
+                    </xsl:if>
+                </xsl:for-each>
             </xsl:for-each>
         </xsl:variable>
 
         <!-- Vérification de la victoire horizontale pour le joueur Jaune -->
-
         <xsl:variable name="horizontalYellow">
-            <xsl:for-each select="configuration/column[1]/row">
-                <xsl:if test="count(../following-sibling::column/row[@rowNumber = current()/@rowNumber][@player='yellow']) >= 3">
-                    <xsl:text>yellow</xsl:text>
-                </xsl:if>
+            <xsl:for-each select="configuration/column">
+                <xsl:for-each select="row[@player='yellow']">
+                    <xsl:variable name="rowNumber" select="@rowNumber"/>
+                    <xsl:if test="count(../following-sibling::column/row[@rowNumber = $rowNumber][@player='yellow']) >= 3">
+                        <xsl:text>yellow</xsl:text>
+                    </xsl:if>
+                </xsl:for-each>
             </xsl:for-each>
         </xsl:variable>
 
@@ -91,11 +95,10 @@
                 <text>Le joueur yellow a gagné horizontalement!</text>
             </xsl:when>
             <xsl:otherwise>
-                <!-- Nenhuma vitória horizontal -->
+                <!-- Aucune victoire horizontale -->
                 <text>Aucune victoire horizontale détectée.</text>
             </xsl:otherwise>
         </xsl:choose>
-
 
         <!-- Vérification Diagonale Haut-Bas -->
         <!-- Vérification Diagonale Haut-Bas Joueur Red-->
