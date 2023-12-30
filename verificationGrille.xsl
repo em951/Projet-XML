@@ -26,7 +26,11 @@
                 <xsl:text>Il y a plus de 6 lignes dans au moins une colonne.</xsl:text>
             </xsl:if>
 
-        <xsl:variable name="winningPlayer">
+        <!-- Vérifier l'status du jeu -->
+         <!-- Vérification Verticale -->
+        <!-- Vérification Verticale pour le joueur red -->
+
+        <xsl:variable name="winningPlayerRed">
             <xsl:for-each select="configuration/column">
                 <xsl:variable name="redPieces" select="row[@player='red']"/>
                 <xsl:if test="count($redPieces) &gt;= 4">
@@ -35,9 +39,22 @@
             </xsl:for-each>
         </xsl:variable>
         
+        <!-- Vérification Verticale pour le joueur Yellow -->
+        <xsl:variable name="winningPlayerYellow">
+            <xsl:for-each select="configuration/column">
+                <xsl:variable name="yellowPieces" select="row[@player='yellow']"/>
+                <xsl:if test="count($yellowPieces) &gt;= 4">
+                    <xsl:text>yellow</xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:variable>
+
         <xsl:choose>
-            <xsl:when test="string-length($winningPlayer) &gt; 0">
+            <xsl:when test="string-length($winningPlayerRed) &gt; 0">
                 <text>Le joueur red a gagné verticalement!</text>
+            </xsl:when>
+            <xsl:when test="string-length($winningPlayerYellow) &gt; 0">
+                <text>Le joueur yellow a gagné verticalement!</text>
             </xsl:when>
             <xsl:otherwise>
                 <!-- No vertical win -->
@@ -46,21 +63,16 @@
         </xsl:choose>
 
 
-        <!-- Vérifier l'status du jeu -->
+  
 
         <!-- Vérification Horizontale -->
         <!-- Vérification de la victoire horizontale pour le joueur Rouge -->
-
-        <!-- Se a variável redWinsHorizontal não estiver vazia, já houve uma vitória -->
 
 
         <!-- Vérification de la victoire horizontale pour le joueur Jaune -->
 
 
-       <!-- Vérification Verticale -->
-
-
-        <!-- Vérification Verticale pour le joueur red -->
+      
 
 
         <!-- Vérification Diagonale Haut-Bas -->
@@ -80,10 +92,6 @@
 
         <!-- Vérifier si la grille est complètement remplie -->
 
-
-         <!--Afficher le status-->
-        <!--1 = vrai, 0 = faux-->
-        
 
         
         

@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<configuration title="Fin de partie - red vertical"
+<configuration title="Fin de partie - yellow gagne en vertical"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="schema.xsd">
 
+    <!--Le joueur yellow commence la partie-->
     <column>
         <!-- Ligne vide -->
         <row rowNumber="0"/>
         <!-- Ligne vide -->
         <row rowNumber="1"/>
         <!-- Ligne vide -->
-        <row player="red" move="4" rowNumber="2"/>
+        <row player="yellow" move="4" rowNumber="2"/>
         <!-- Ligne vide -->
-        <row player="red" move="3" rowNumber="3"/>
+        <row player="yellow" move="3" rowNumber="3"/>
         <!-- Ligne vide -->
-        <row player="red" move="2" rowNumber="4"/>
+        <row player="yellow" move="2" rowNumber="4"/>
         <!-- Ligne vide -->
-        <row player="red" move="1" rowNumber="5"/>
+        <row player="yellow" move="1" rowNumber="5"/>
     </column>
     <column>
         <!-- Ligne vide -->
@@ -30,21 +31,7 @@
         <!-- Ligne vide -->
         <row rowNumber="4"/>
         <!-- Ligne vide -->
-        <row rowNumber="5"/>
-    </column>
-    <column>
-       <!-- Ligne vide -->
-        <row rowNumber="0"/>
-        <!-- Ligne vide -->
-        <row rowNumber="1"/>
-        <!-- Ligne vide -->
-        <row rowNumber="2"/>
-        <!-- Ligne vide -->
-        <row rowNumber="3"/>
-        <!-- Ligne vide -->
-        <row rowNumber="4"/>
-        <!-- Ligne vide -->
-        <row rowNumber="5"/>
+        <row player = "red" move="1" rowNumber="5"/>
     </column>
     <column>
        <!-- Ligne vide -->
@@ -58,7 +45,21 @@
         <!-- Ligne vide -->
         <row rowNumber="4"/>
         <!-- Ligne vide -->
-        <row rowNumber="5"/>
+        <row player = "red" move="2" rowNumber="5"/>
+    </column>
+    <column>
+       <!-- Ligne vide -->
+        <row rowNumber="0"/>
+        <!-- Ligne vide -->
+        <row rowNumber="1"/>
+        <!-- Ligne vide -->
+        <row rowNumber="2"/>
+        <!-- Ligne vide -->
+        <row rowNumber="3"/>
+        <!-- Ligne vide -->
+        <row rowNumber="4"/>
+        <!-- Ligne vide -->
+        <row player = "red" move="3" rowNumber="5"/>
     </column>
     <column>
        <!-- Ligne vide -->
