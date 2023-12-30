@@ -101,18 +101,66 @@
         </xsl:choose>
 
         <!-- Vérification Diagonale Haut-Bas -->
-        <!-- Vérification Diagonale Haut-Bas Joueur Red-->
-   
+        <!-- Vérification première Diagonale Haut-Bas Joueur Red-->
+        <xsl:variable name="diagonalRedTopBottom">
+            <xsl:choose>
+                <xsl:when test="configuration/column[1]/row[@player='red'][@rowNumber='0']
+                                and configuration/column[2]/row[@player='red'][@rowNumber='1']
+                                and configuration/column[3]/row[@player='red'][@rowNumber='2']
+                                and configuration/column[4]/row[@player='red'][@rowNumber='3']">
+                    <xsl:text>red diagonale</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>red n'as pas gangné en diagonale</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
 
-        <!-- Vérification Diagonale Haut-Bas Joueur yellow -->
-
+        <!-- Vérification première Diagonale Haut-Bas Joueur yellow -->
+        <xsl:variable name="diagonalYellowTopBottom">
+            <xsl:choose>
+                <xsl:when test="configuration/column[1]/row[@player='yellow'][@rowNumber='0']
+                                and configuration/column[2]/row[@player='yellow'][@rowNumber='1']
+                                and configuration/column[3]/row[@player='yellow'][@rowNumber='2']
+                                and configuration/column[4]/row[@player='yellow'][@rowNumber='3']">
+                    <xsl:text>yellow diagonale</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>yellow n'as pas gangné en diagonale</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
 
         <!-- Vérification Diagonale Bas-Haut -->
        <!-- Vérification Diagonale Bas-Haut pour le joueur red -->
-
+        <xsl:variable name="diagonalRedBottomTop">
+            <xsl:choose>
+                <xsl:when test="configuration/column[1]/row[@player='red'][@rowNumber='5']
+                                and configuration/column[2]/row[@player='red'][@rowNumber='4']
+                                and configuration/column[3]/row[@player='red'][@rowNumber='3']
+                                and configuration/column[4]/row[@player='red'][@rowNumber='2']">
+                    <xsl:text>red diagonale</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>red n'as pas gangné en diagonale</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
 
         <!-- Vérification Diagonale Bas-Haut pour le joueur yellow -->
-
+        <xsl:variable name="diagonalYellowBottomTop">
+            <xsl:choose>
+                <xsl:when test="configuration/column[1]/row[@player='yellow'][@rowNumber='5']
+                                and configuration/column[2]/row[@player='yellow'][@rowNumber='4']
+                                and configuration/column[3]/row[@player='yellow'][@rowNumber='3']
+                                and configuration/column[4]/row[@player='yellow'][@rowNumber='2']">
+                    <xsl:text>yellow diagonale</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>yellow n'as pas gangné en diagonale</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
 
 
         <!-- Vérifier si la grille est complètement remplie -->
