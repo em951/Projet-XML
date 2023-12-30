@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<configuration title="Fin de partie - yellow gagne verticalement"
+<configuration title="Fin de partie - red gagne horizontalement"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="schema.xsd">
 
@@ -11,7 +11,7 @@
         <!-- Ligne vide -->
         <row rowNumber="1"/>
         <!-- Ligne vide -->
-        <row player="yellow" move="4" rowNumber="2"/>
+        <row rowNumber="2"/>
         <!-- Ligne vide -->
         <row player="yellow" move="3" rowNumber="3"/>
         <!-- Ligne vide -->
@@ -29,7 +29,7 @@
         <!-- Ligne vide -->
         <row rowNumber="3"/>
         <!-- Ligne vide -->
-        <row rowNumber="4"/>
+        <row player="yellow" move="4" rowNumber="4"/>
         <!-- Ligne vide -->
         <row player = "red" move="1" rowNumber="5"/>
     </column>
@@ -73,7 +73,7 @@
         <!-- Ligne vide -->
         <row rowNumber="4"/>
         <!-- Ligne vide -->
-        <row rowNumber="5"/>
+        <row player = "red" move="4" rowNumber="5"/>
     </column>
     <column>
        <!-- Ligne vide -->

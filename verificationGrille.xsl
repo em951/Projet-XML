@@ -57,22 +57,44 @@
                 <text>Le joueur yellow a gagné verticalement!</text>
             </xsl:when>
             <xsl:otherwise>
-                <!-- No vertical win -->
+                <!-- Nenhuma vitória vertical -->
                 <text>Aucune victoire verticale détectée.</text>
             </xsl:otherwise>
         </xsl:choose>
 
-
-  
-
         <!-- Vérification Horizontale -->
         <!-- Vérification de la victoire horizontale pour le joueur Rouge -->
 
+        <xsl:variable name="horizontalRed">
+            <xsl:for-each select="configuration/column[1]/row">
+                <xsl:if test="count(../following-sibling::column/row[@rowNumber = current()/@rowNumber][@player='red']) >= 3">
+                    <xsl:text>red</xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:variable>
 
         <!-- Vérification de la victoire horizontale pour le joueur Jaune -->
 
+        <xsl:variable name="horizontalYellow">
+            <xsl:for-each select="configuration/column[1]/row">
+                <xsl:if test="count(../following-sibling::column/row[@rowNumber = current()/@rowNumber][@player='yellow']) >= 3">
+                    <xsl:text>yellow</xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:variable>
 
-      
+        <xsl:choose>
+            <xsl:when test="string-length($horizontalRed) &gt; 0">
+                <text>Le joueur red a gagné horizontalement!</text>
+            </xsl:when>
+            <xsl:when test="string-length($horizontalYellow) &gt; 0">
+                <text>Le joueur yellow a gagné horizontalement!</text>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- Nenhuma vitória horizontal -->
+                <text>Aucune victoire horizontale détectée.</text>
+            </xsl:otherwise>
+        </xsl:choose>
 
 
         <!-- Vérification Diagonale Haut-Bas -->
